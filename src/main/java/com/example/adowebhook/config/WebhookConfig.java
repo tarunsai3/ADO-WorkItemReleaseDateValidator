@@ -2,6 +2,8 @@ package com.example.adowebhook.config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Bean;
+import org.springframework.web.client.RestTemplate;
 
 @Configuration
 public class WebhookConfig {
@@ -25,5 +27,10 @@ public class WebhookConfig {
 
     public String getPersonalAccessToken() {
         return personalAccessToken;
+    }
+
+    @Bean
+    public RestTemplate restTemplate() {
+        return new RestTemplate();
     }
 }
