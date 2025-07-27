@@ -37,7 +37,7 @@ public class WebhookService {
         if (orgUrl == null || !orgUrl.startsWith(config.getAdoOrgUrl())) {
             logger.warn("Blocked invalid orgUrl.");
             throw new CustomExp(HttpStatus.BAD_REQUEST, "Invalid Azure DevOps Org URL.");
-        }
+        }logger.info("DEBUG: orgUrl='{}', expectedPrefix='{}'", orgUrl, config.getAdoOrgUrl());
 
         // Validate project name
         if (projectName == null || projectName.isEmpty()) {
